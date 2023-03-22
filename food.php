@@ -90,93 +90,93 @@ include('connect.php');
 <div class="container">
     <!-- ----------------------------------- South Indian-------------------------- -->
     <h1 class="food-h">Food</h1>
-    <form action="manage_cart.php" method="POST">
-        <section class="content">
-            <div class="container-fluid">
-                <div class="col-md-12">
-                    <div class="row">
-                        <?php
-                        include('global.php');
 
-                        function display()
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 row">
+                    <?php
+                    include('global.php');
+
+                    function display()
+                    {
+                        $conn   = connection();
+                        $str    = "select * from addfood";
+                        $result = $conn->query($str);
+                        $conn->close();
+                        return $result;
+                    }
+
+                    $result = display();
+                    if ($result->num_rows > 0)
+                    {
+                        while ($row = $result->fetch_assoc())
                         {
-                            $conn   = connection();
-                            $str    = "select * from addfood";
-                            $result = $conn->query($str);
-                            $conn->close();
-                            return $result;
-                        }
-
-                        $result = display();
-                        if ($result->num_rows > 0)
-                        {
-                            while ($row = $result->fetch_assoc())
-                            {
-                                ?>
+                            ?>
 
 
+                            <div class="col-md-4 m-0">
+                                <form action="manage_cart.php" method="POST">
 
-                                <div class="col-md-4">
-                                    <div class="card card-primary card-outline">
-                                        <div class="card-header">
-                                            <div class="row mb-2">
-                                                <div class="col-sm-6">
-                                                    <h5 class="m-0"><?php echo ucfirst($row['name']); ?></h5>
+                                    <div class="col-md-12 p-0">
+                                        <div class="card card-primary card-outline">
+                                            <div class="card-header">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-6">
+                                                        <input type="hidden" name="item_name" value="<?php echo ucfirst($row['name']); ?>">
+                                                        <input type="hidden" name="price" value="<?php echo $row['price']; ?>">
+                                                        <h5 class="m-0"><?php echo ucfirst($row['name']); ?></h5>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <ol class="nav nav-pills nav-sidebar flex-column float-sm-right">
+                                                            <li class="breadcrumb-item">
+                                                                <button type="submit"
+                                                                        class="btn btn-sm btn-tool" name="add_to_cart">
+                                                                    <i class="fas fa-add"></i> Add to Cart
+                                                                </button>
+                                                            </li>
+                                                        </ol>
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <ol class="nav nav-pills nav-sidebar flex-column float-sm-right">
-                                                        <li class="breadcrumb-item">
-                                                            <button type="submit"
-                                                                    class="btn btn-sm btn-tool" name="add_to_cart">
-                                                                <i class="fas fa-add"></i> Add to Cart
-                                                            </button>
-                                                        </li>
-                                                    </ol>
-                                                </div>
+
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="nav nav-pills nav-sidebar flex-column  users-list clearfix">
+                                                    <li class="row">
+                                                        <div class="col-md-6">
+                                                            <img src="<?php echo getBaseUrl() . '../uploads/' . $row['img'] ?>"
+                                                                 alt="delux">
+                                                        </div>
+                                                        <div class="col-md-6 text-right">
+                                                            <strong>
+                                                                <br><?php echo $row['foodtype']; ?>
+                                                                <br> <?php echo $row['price']; ?> RS
+                                                            </strong>
+                                                        </div>
+
+                                                    </li>
+
+                                                </ul>
+
                                             </div>
 
                                         </div>
-                                        <div class="card-body">
-                                            <ul class="nav nav-pills nav-sidebar flex-column  users-list clearfix">
-                                                <li class="row">
-                                                    <div class="col-md-6">
-                                                        <img src="<?php echo getBaseUrl() . '../uploads/' . $row['img'] ?>"
-                                                             alt="delux">
-                                                    </div>
-                                                    <div class="col-md-6 text-right">
-                                                        <strong>
-                                                            <br><?php echo $row['foodtype']; ?>
-                                                            <br> <?php echo $row['price']; ?> RS
-                                                        </strong>
-                                                    </div>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </div>
-
                                     </div>
-
-
-                                </div>
-
-
-                                <?php
-                            }
+                                </form>
+                            </div>
+                            <?php
                         }
-                        ?>
+                    }
+                    ?>
 
-
-                    </div>
 
                 </div>
+
             </div>
+        </div>
 
 
-        </section>
-
-    </form>
+    </section>
 
 </div>
 
