@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e489544-bc5e-4eba-b838-8904cb842bd7" name="Changes" comment="" />
+    <list default="true" id="431d1b36-5a72-4151-a779-dabc3cccf1bc" name="Changes" comment="Cart Bug fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,15 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="2NEWiHzF5NIqfxtUYSrOQEfAEOe" />
+  <component name="ProjectId" id="2NVbJLN0RwZY0htDonio9ix25BO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,34 +32,32 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\h\shruti\hotalManagmentF" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration useDefault="false">C:\Users\bapur\AppData\Roaming\Subversion</configuration>
+    <option name="runUnderTerminal" value="true" />
+  </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="1e489544-bc5e-4eba-b838-8904cb842bd7" name="Changes" comment="" />
-      <created>1679229848176</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1679229848176</updated>
-      <workItem from="1679229851012" duration="970000" />
-      <workItem from="1679230859324" duration="956000" />
-      <workItem from="1679234091018" duration="1380000" />
-      <workItem from="1679236511216" duration="1770000" />
-      <workItem from="1679477616900" duration="578000" />
-    </task>
-    <task id="LOCAL-00001" summary="Room And Food">
-      <created>1679237359757</created>
+    <task id="LOCAL-00001" summary="Cart Bug fix">
+      <created>1679480885281</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1679237359757</updated>
+      <updated>1679480885281</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="431d1b36-5a72-4151-a779-dabc3cccf1bc" name="Changes" comment="" />
+      <created>1679752128600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679752128600</updated>
+      <workItem from="1679752128868" duration="60000" />
+      <workItem from="1679752210244" duration="67000" />
+      <workItem from="1679752301570" duration="59000" />
+      <workItem from="1679752920769" duration="114000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -73,10 +65,24 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Room And Food" />
-    <option name="LAST_COMMIT_MESSAGE" value="Room And Food" />
+    <MESSAGE value="Cart Bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cart Bug fix" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
