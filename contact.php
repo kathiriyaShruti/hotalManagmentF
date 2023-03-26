@@ -1,6 +1,8 @@
 <?php
 include('dbcon.php');
 include('header.php');
+
+
 ?>
 
 <html>
@@ -53,63 +55,136 @@ include('header.php');
             </div>
         </div>
         <div class="contact2">
-            <div class="contact2-h1">
-                <h1 align="center">Don't Hesitate <br> To Contact Us</h1>
-            </div>
+                <section id="contact" class="contact">
+                    <div class="container aos-init aos-animate" data-aos="fade-up">
 
-            <div class="contact-box">
-                <form action="contact.php" method="post">
-                    <div class="form-group-con">
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" id="name" placeholder="Enyer Your name">
-                    </div>
-                    <div class="form-group-con">
-                        <label for="name">Email:</label>
-                        <input type="email" name="email" id="email" placeholder="Enyer Your Email">
-                    </div>
-                    <div class="form-group-con">
-                        <label for="name">Mobile:</label>
-                        <input type="phone" name="phone" id="phone" placeholder="Enyer Your phone">
-                    </div>
-                    <div class="form-group-con">
-                        <label for="name">Address:</label>
-                        <input type="phone" name="address" id="phone" placeholder="Enyer Your Address">
-                    </div>
-                    <div class="form-group-con">
-                        <label for="name">Message:</label>
-                        <textarea name="message" id="message" cols="20" rows="4"></textarea>
-                    </div>
-                    <div class="form-group-con">
-                        <button class="con-btn" name="con-btn">Submit</button>
-                    </div>
-                </form>
-                <?php
-               if(isset($_POST['con-btn']))
-               {
-                   $con_name=$_POST['name'];
-                   $con_email=$_POST['email'];
-                   $con_mobile=$_POST['phone'];
-                   $con_address=$_POST['address'];
-                   $con_message=$_POST['message'];
+                        <div class="section-header mb-5">
+                        <p style="text-align: center;">Need Help? <span>Contact Us</span></p>
+                        </div>
 
-                   $qry="INSERT INTO contact(name,email,mobile,address,message) VALUES ('$con_name','$con_email','$con_mobile','$con_address','$con_message')";
+                        <div class="mb-3">
+                        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>
+                        </div><!-- End Google Maps -->
 
-                   $run=mysqli_query($sql,$qry);
-                   if($run)
-                   {
-                       ?>
-                <script>
-                alert("Thanks For Contacting Us");
-                </script>
-                <?php
-                   }
-                   else{
+                        <div class="row gy-4">
 
-                   }
-                  
-               }
-            ?>
-            </div>
+                        <div class="col-md-6 mb-2">
+                            <div class="info-item  d-flex align-items-center">
+                            <i class="icon bi bi-map flex-shrink-0"></i>
+                            <div>
+                                <h3>Our Address</h3>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="col-md-6  mb-2">
+                            <div class="info-item d-flex align-items-center">
+                            <i class="icon bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>contact@example.com</p>
+                            </div>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="col-md-6  mb-2">
+                            <div class="info-item  d-flex align-items-center">
+                            <i class="icon bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Call Us</h3>
+                                <p>+1 5589 55488 55</p>
+                            </div>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="col-md-6  mb-2">
+                            <div class="info-item  d-flex align-items-center">
+                            <i class="icon bi bi-share flex-shrink-0"></i>
+                            <div>
+                                <h3>Opening Hours</h3>
+                                <div><strong>Mon-Sat:</strong> 11AM - 23PM;
+                                <strong>Sunday:</strong> Closed
+                                </div>
+                            </div>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        </div>
+
+                        <form action="contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+                        <?php
+                        
+                            if(isset($_POST['con-btn']))
+                            {
+                                if((isset($_POST['email']) && $_POST['email'] != null) && (isset($_POST['name']) && $_POST['name'] != null))
+                                {
+                            
+                                    $con_name=$_POST['name'];
+                                    $con_email=$_POST['email'];
+                                    $con_mobile=$_POST['phone'];
+                                    $con_address=$_POST['address'];
+                                    $con_message=$_POST['message'];
+
+                                    $qry="INSERT INTO contact(name,email,mobile,address,message) VALUES ('$con_name','$con_email','$con_mobile','$con_address','$con_message')";
+
+                                    $run=mysqli_query($sql,$qry);
+                                    if($run)
+                                    {
+                                        $_POST['name'] = null;
+                                        $_POST['email']= null;
+                                        $_POST['phone']= null;
+                                        $_POST['address']= null;
+                                        $_POST['message']= null;
+
+                                        // echo "<script> alert('Thanks For Contacting Us'); </script>";
+                                        ?>
+
+
+
+                                        <script> 
+                                        $('#name').val('');
+                                        $('#email').val('');
+                                        $('#phone').val('');
+                                        $('#address').val('');
+                                        $('#message').val('');
+                                        
+                                        alert('Thanks For Contacting Us'); </script>
+                                        
+                                        <?php
+                                    }
+                            
+                                }
+                            }
+                        
+                        ?>
+                        <div class="row">
+                            <div class="col-xl-6 form-group">
+                                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                            </div>
+                            <div class="col-xl-6 form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6 form-group">
+                                 <input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone Number" required="">
+                            </div>
+                            <div class="col-xl-6 form-group">
+                                <input type="text" class="form-control" name="address" id="address" placeholder="Your Address" required="">
+                            </div>
+                        </div>
+                
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required="" spellcheck="false"></textarea>
+                        </div>
+                        
+                        <div class="text-center"><button type="submit" name="con-btn"  class="btn btn-sm" style="background: #a9a0c1;">Send Message</button></div>
+                        </form><!--End Contact Form -->
+
+                </div>
+            </section>
+               
         </div>
 
     </div>
