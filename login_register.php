@@ -3,7 +3,7 @@ include('connection.php');
 session_start();
 //for login
 if (isset($_POST['login'])) {
-  $qry = "SELECT * FROM `registered_users` WHERE `email`='$_POST[email_username]' OR `username`='$_POST[email_username]'";
+  $qry = "SELECT * FROM `registered_users` WHERE (`email`='$_POST[email_username]' OR `username`='$_POST[email_username]') and (`status`=0)";
   $result = mysqli_query($con, $qry);
   if ($result) {
     if (mysqli_num_rows($result) == 1) {
